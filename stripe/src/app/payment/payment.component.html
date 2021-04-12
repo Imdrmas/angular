@@ -1,0 +1,10 @@
+<form novalidate (ngSubmit)="buy()" [formGroup]="stripeForm" #f="ngForm">
+  <input style="border-bottom: none;" class="form-control" type="text" formControlName="name" placeholder="Your name">
+  <div id="card-element" class="form-control"></div><br>
+  <div *ngIf="error" class="alert alert-danger">
+      {{error}}
+  </div>
+  <button type="submit" class="btn btn-outline-success" [disabled]="!f.valid">
+    Confirm
+  </button>
+</form>

@@ -1,0 +1,19 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-5" style="margin-top: 60px;">
+      <div class="card" style="width: 20rem;" *ngFor="let pro of products" style="margin-bottom: 20px;">
+        <img src="{{pro.image}}" class="card-img-top" alt="..." style="width: 50%; height: 60%;">
+        <div class="card-body">
+          <h5 class="card-title">{{pro.name}}</h5>
+          <p class="card-text">{{pro.description}}</p>
+          <a class="btn btn-primary disabled">{{pro.price}} $</a>
+          <button class="btn btn-success" style="margin-left: 10px;" [routerLink]="['/payment/', pro.id]">Puy</button>
+        </div>
+      </div><br><hr>
+    </div>
+    <div class="col-7" style="margin-top: 80px;">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
